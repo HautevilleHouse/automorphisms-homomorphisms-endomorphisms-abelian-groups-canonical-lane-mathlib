@@ -1,0 +1,15 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.AutomorphismsHomomorphismsEndomorphismsAbelianGroupsCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.AutomorphismsHomomorphismsEndomorphismsAbelianGroupsCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace AutomorphismsHomomorphismsEndomorphismsAbelianGroupsCanonicalLaneLean
+
+def ConstrainedAbelianGroupClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_abelian_group_endgame (A : AdmissibleClass) : ConstrainedAbelianGroupClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end AutomorphismsHomomorphismsEndomorphismsAbelianGroupsCanonicalLaneLean
+end HautevilleHouse
